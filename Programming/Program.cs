@@ -27,6 +27,13 @@
         {
             /*
              As the questionstate that 
+             num = 22
+             sum = 4
+             sum ka product = 4 * 4 = 16
+
+             sumOFDigit(num * num) = 22 * 22 = 484
+             sum ofDigit = 16;
+
              sumOfDigit(num) * sumOfDigit(num) = sumOfDigit(num * num);
             */
             int sumOfDigit = SumOfDigit(num);
