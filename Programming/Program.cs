@@ -4,7 +4,7 @@
     {
         public static void Main()
         {
-            //This hadles the user input and get the range values (n,m)
+            //This handles the user input and get the range values (n,m)
             System.Console.WriteLine("Enter the range: ");
             int n_input = int.Parse(Console.ReadLine());
             int m_input = int.Parse(Console.ReadLine());
@@ -25,6 +25,10 @@
 
         public static bool IsMagicalNum(int num)
         {
+            /*
+             As the questionstate that 
+             sumOfDigit(num) * sumOfDigit(num) = sumOfDigit(num * num);
+            */
             int sumOfDigit = SumOfDigit(num);
             int squareOfNum = num * num;
             int sumOfSquareNum = SumOfDigit(squareOfNum);
