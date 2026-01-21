@@ -1,0 +1,19 @@
+public class ReferenceStruct{
+    
+
+    public ref struct TempBuffer
+    {
+        public void Dispose()
+        {
+            
+        }
+    }
+
+
+    public static void UseBuffer()
+    {
+        using var buf = new TempBuffer();
+
+    }
+
+}
