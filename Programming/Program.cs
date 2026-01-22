@@ -23,6 +23,8 @@
 
 
 
+        //Meta Data about the method 
+        [Obsolete("This checks for a number to be Magic Number Or Not")]
         public static bool IsMagicalNum(int num)
         {
             /*
