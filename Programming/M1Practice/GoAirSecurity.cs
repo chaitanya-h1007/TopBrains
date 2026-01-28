@@ -16,7 +16,7 @@ namespace Programming.M1Practice
 
         {
             // log prefix for debugging
-            System.Console.WriteLine(employeeId.Substring(0,6));
+            //System.Console.WriteLine(employeeId.Substring(0,6));
             if (employeeId.Substring(0,6) != "GOAIR/")
             {
                 throw new InvalidException("Invalid Entry Details");
