@@ -1,0 +1,8 @@
+public class Admin : User
+{
+    public override void GetRoleDetails()
+    {
+        System.Console.WriteLine("Admin Role Given");    
+    }
+    
+}
