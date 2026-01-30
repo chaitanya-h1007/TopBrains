@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace Programming.M1Practice
+namespace M1Practice
 {
     public class NameMatch
     {
@@ -28,6 +28,8 @@ namespace Programming.M1Practice
             {
                 return -1;
             }
+
+            return count;
 
             
         }

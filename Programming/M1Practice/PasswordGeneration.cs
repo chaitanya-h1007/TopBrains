@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Linq;
 
-namespace Programming.M1Practice
+namespace M1Practice
 {
     // Simple utility to validate a specially-formatted username
     // and generate a password from it.

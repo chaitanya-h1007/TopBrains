@@ -1,5 +1,5 @@
 using System.Runtime.InteropServices;
-namespace Programming.M1Practice{
+namespace M1Practice{
     /// <summary>
     /// Reads a single-line sentence, then either reverses the order
     /// of words or reverses characters within each word depending

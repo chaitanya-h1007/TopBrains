@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Programming.M1Practice
+namespace M1Practice
 {
 
     /// <summary>

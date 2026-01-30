@@ -1,4 +1,4 @@
-namespace Programming.M1Practice
+namespace M1Practice
 {
     /// <summary>
     /// Container class for gadget validation utilities.
@@ -18,6 +18,7 @@ namespace Programming.M1Practice
             public bool validateGadgetID(string gadgetId)
             {
                 // ensure first character is uppercase
+                
                 bool isUpper = gadgetId.Take(1).All(char.IsUpper);
                 if (!isUpper)
                 {
