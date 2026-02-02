@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Programming.M1Practice.WordWand</StartupObject>
+    <StartupObject>Programming</StartupObject>
   </PropertyGroup>
 
 </Project>
