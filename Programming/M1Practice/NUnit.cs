@@ -19,10 +19,10 @@ namespace M1_Practice{
             Program account = new Program(20000m);
 
             // Act: Deposit 5000 into the account
-            account.Deposit(5000m);
+            account.Deposit(15000m);
 
-            // Assert: Verify the new balance equals 25000 (20000 + 5000)
-            Assert.AreEqual(25000m, account.Balance);
+            // Assert: Verify the new balance equals 25000 (20000 + 15000)
+            Assert.AreEqual(35000m, account.Balance);
         }
 
         /// <summary>
