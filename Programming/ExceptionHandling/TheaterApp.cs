@@ -51,11 +51,12 @@ namespace ExceptionHandling
         public static void Main(string[] args)
         {
             TheaterManager tm = new TheaterManager();
+            tm.AddScreening("Leo", DateTime.Today, "S1", 100, 150);
 
-            tm.AddScreening("Avengers", DateTime.Now, "S1", 100, 200);
-            tm.BookTickets("Avengers", DateTime.Now, 5);
+            bool booked = tm.BookTickets("Leo", DateTime.Today, 5);
+            Console.WriteLine("Booking Status: " + booked);
 
-            Console.WriteLine("Booking Done");
+            Console.WriteLine("Revenue: " + tm.CalculateTotalRevenue());
         }
     }
 

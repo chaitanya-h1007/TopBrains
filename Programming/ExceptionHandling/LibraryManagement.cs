@@ -8,17 +8,14 @@ namespace ExceptionHandling
         public int PublicationYear{get; set;}
 
         //constructor for Book
-        public LibraryManagement(string title, string author, string genre, int year)
+        public Book(string title, string author, string genre, int year)
         {
             this.Title = title;
             this.Author = author;
             this.Genre = genre;
             this.PublicationYear = year;
         }
-        
     }
-
-
     public class LibraryUtility
     {
         //Local storage to add the books as Object
@@ -47,15 +44,12 @@ namespace ExceptionHandling
                 if (!resDictionary.ContainsKey(item.Genre)) //if key not present add a key with new list.
                 {
 
-                    resDictionary.Add(item.Genre, new List<Book>());
-                    
-                    
+                    resDictionary.Add(item.Genre, new List<Book>());  
                 }
+                resDictionary[item.Genre].Add(item);
                 
             }
-
-
-
+            return resDictionary;
         }
 
         // Returns all books by specific author
@@ -77,19 +71,39 @@ namespace ExceptionHandling
         // Returns total number of books
         public int GetTotalBookcount()
         {
-            return booksList.size();
+            return booksList.Count();
         }
-
-
-    
-
     }
 
     public class LibraryManagement
     {
         public static void Main(string[] args)
         {
-            System.Console.WriteLine("this is the Library Program");
+            LibraryUtility lb = new LibraryUtility();
+            lb.AddBook("Algorithims to Live by", "Jake", "Non-fiction", 2019);
+            lb.AddBook("Harry Potter", "JK Rowlling", "Fiction", 1998);
+            lb.AddBook("The Indian Saga", "R.K Krishnan", "Novel", 2007);
+
+            Console.WriteLine("Books Grouped By Genre:");
+            var grouped = lb.GroupBooksByGenre();
+            foreach (var g in grouped)
+            {
+                Console.WriteLine("Genre: " + g.Key);
+                foreach (var b in g.Value)
+                    Console.WriteLine("  " + b.Title + " by " + b.Author);
+            }
+
+            // Search by Author
+            Console.WriteLine("\nBooks by JK Rowlling:");
+            var authorBooks = lb.GetBooksByAuthor("JK Rowlling");
+            foreach (var b in authorBooks)
+                Console.WriteLine(b.Title);
+
+            // Total Count
+            Console.WriteLine("\nTotal Books: " + lb.GetTotalBookcount());
+
+
+
         }
     }
 }
