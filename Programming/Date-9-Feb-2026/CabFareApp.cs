@@ -4,8 +4,7 @@ using System.Security.Cryptography;
 public class Cab
 {
     public virtual void CalculateFee(int distanceInKM)
-    {
-        
+    {  
     }
 }
 
