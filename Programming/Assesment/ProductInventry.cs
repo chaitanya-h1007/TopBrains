@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+#region Interfaces & Enums
 public interface IProduct
 {
     int Id { get; }
@@ -11,7 +11,8 @@ public interface IProduct
 }
 
 public enum Category { Electronics, Clothing, Books, Groceries }
-
+#endregion
+#region Product Repositry
 // 1. Create a generic repository for products
 public class ProductRepository<T> where T : class, IProduct
 {
@@ -47,7 +48,8 @@ public class ProductRepository<T> where T : class, IProduct
 
     public IEnumerable<T> GetAll() => _products;
 }
-
+#endregion
+#region ElectronicProduct
 // 2. Specialized electronic product
 public class ElectronicProduct : IProduct
 {
@@ -59,6 +61,8 @@ public class ElectronicProduct : IProduct
     public string Brand { get; set; }
 }
 
+#endregion
+#region SimpleProduct
 // Simple general product for non-electronics
 public class SimpleProduct : IProduct
 {
@@ -67,6 +71,8 @@ public class SimpleProduct : IProduct
     public decimal Price { get; set; }
     public Category Category { get; set; }
 }
+#endregion
+#region DiscountedProduct
 
 // 3. Create a discounted product wrapper
 public class DiscountedProduct<T> : IProduct where T : IProduct
@@ -96,7 +102,8 @@ public class DiscountedProduct<T> : IProduct where T : IProduct
         return $"{_product.Name}: Original {_product.Price:C}, Discounted {Price:C} ({_discountPercentage}% off)";
     }
 }
-
+#endregion
+#region Inventory
 // 4. Inventory manager with constraints
 public class InventoryManager
 {
@@ -131,6 +138,8 @@ public class InventoryManager
     }
 
     // Implement bulk price update with delegate
+    #endregion
+    #region UpdatePrice
     public void UpdatePrices<T>(List<T> products, Func<T, decimal> priceAdjuster)
         where T : IProduct
     {
@@ -155,7 +164,8 @@ public class InventoryManager
         }
     }
 }
-
+#endregion
+#region  Main
 // 5. TEST SCENARIO: implement and demonstrate
 public class Program
 {
@@ -213,3 +223,4 @@ public class Program
         Console.WriteLine($"Total after bulk update: {repoList.Sum(p => p.Price)}");
     }
 }
+#endregion
