@@ -24,5 +24,5 @@ public class Program5
         foreach(var item in freq){
             Console.WriteLine($"key: {item.Key} Value: {item.Value}");
         }
-    }
+    }   
 }

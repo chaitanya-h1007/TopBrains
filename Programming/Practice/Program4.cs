@@ -12,6 +12,7 @@ public class Program4
         list.Add(5);
         
         
+        
         HashSet<int> set = new HashSet<int>();
         for(int i = 0 ; i < list.Count; i++){
             if(set.Contains(list[i])){
