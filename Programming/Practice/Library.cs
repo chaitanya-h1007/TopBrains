@@ -70,11 +70,13 @@ namespace HelloWorld
       {
           get
           {
-              // TODO: Return books by genre or empty list
-              if (_genreIndex.ContainsKey(genre))
-                    return _genreIndex[genre];
+                // TODO: Return books by genre or empty list
+                if (!_genreIndex.ContainsKey(genre))
+                {
+                    return new List<T>();
+                }
 
-                return new List<T>();
+                return _genreIndex[genre];
           }
       }
       
